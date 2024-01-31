@@ -9,13 +9,13 @@
 # is not a /24, so make sure to specify here if needed.
 
 # The following are optional and automatically discovered
-# dhcp_range_minimum: 192.168.1.100
-# dhcp_range_maximum: 192.168.1.250
-# network_broadcast_ip: 192.168.1.255
-# network_gateway_ip: 192.168.1.1
+dhcp_range_minimum: 10.101.28.20
+dhcp_range_maximum: 10.101.28.30
+network_broadcast_ip: 10.101.28.255
+network_gateway_ip: 10.101.28.1
 
 # If omitted, host_ip is automatically determined
-# host_ip: 192.168.1.11
+host_ip: 10.101.28.194
 
 # If omitted, defaults to 8.8.8.8
 # Note that the primary DNS is always host_ip
@@ -40,7 +40,7 @@
 #           Alternativly, you can use iptables to address this as well. That is 
 #           out of scope for this application
 
-# interface: enp2s0
+interface: ens160
 
 # remote_logging_server is the remote Fluent-Bit instance which collects logs of provisioning process. Must be an FQDN or IP Address.
 # remote_logging_service_uri is the remote Fluent-Bit instance URI path for collection.  Defaults to "edgenode_provisioning"
@@ -65,20 +65,20 @@
 # The template array below shows how it should be configured. The dnsmasq.conf file of ESP will 
 # then be adapted to have the "dhcp-host" entries.
 
-# ip_mapping:
-#   - mac: 00:11:22:33:44:55
-#     ip: 192.168.100.200
+ip_mapping:
+  - mac: 00:50:56:b6:dc:22
+    ip: 10.101.28.20
 #   - mac: 01:12:23:24:25:26
 #     ip: 192.168.100.220
 
 # This section is used to disable services not being used. By default they are all enabled.
-# disable_uos_wifi: false
+disable_uos_wifi: true
 # disable_gitea: false
-# disable_aws_cli: false
+disable_aws_cli: true
 # disable_qemu: false
 # disable_smb: false
 # disable_dnsmasq: false
-# disable_dyn_profile: false
+disable_dyn_profile: true
 disable_fluent_logging: true
 
 # This is for airgap condition,profiles in local
@@ -87,25 +87,6 @@ disable_fluent_logging: true
 # Please make sure to define ALL of the variables below, even if they
 # are empty. Otherwise, this application will not be configured properly.
 profiles:
-
-  - git_remote_url: https://github.com/intel/esp-profile-clearlinux.git
-    profile_branch: slim
-    profile_base_branch: master
-    git_username: ""
-    git_token: ""
-    # This is the name that will be shown on the PXE menu (NOTE: No Spaces)
-    name: Clear_Linux
-    custom_git_arguments: --depth=1
-
-  - git_remote_url: https://github.com/intel/esp-profile-clearlinux.git
-    profile_branch: desktop
-    profile_base_branch: master
-    git_username: ""
-    git_token: ""
-    # This is the name that will be shown on the PXE menu (NOTE: No Spaces)
-    name: Clear_Linux_Desktop
-    custom_git_arguments: --depth=1
-
   - git_remote_url: https://github.com/intel/esp-profile-ubuntu.git
     profile_branch: slim
     profile_base_branch: master
@@ -115,11 +96,12 @@ profiles:
     name: Ubuntu_22.04
     custom_git_arguments: --depth=1
 
-  - git_remote_url: https://github.com/intel/esp-profile-ubuntu.git
-    profile_branch: desktop
-    profile_base_branch: master
-    git_username: ""
-    git_token: ""
+    #  Aspire test profile
+  - git_remote_url: https://github.com/hughwang10/profiles.git
+    profile_branch: hugh
+    profile_base_branch: main
+    git_username: "hughwang10"
+    git_token: "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"
     # This is the name that will be shown on the PXE menu (NOTE: No Spaces)
-    name: Ubuntu_22.04_Desktop
-    custom_git_arguments: --depth=1
+    name: Ubuntu_isw
+    custom_git_arguments: --depth=1    
