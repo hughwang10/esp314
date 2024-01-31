@@ -95,13 +95,3 @@ profiles:
     # This is the name that will be shown on the PXE menu (NOTE: No Spaces)
     name: Ubuntu_22.04
     custom_git_arguments: --depth=1
-
-    #  Aspire test profile
-  - git_remote_url: https://github.com/hughwang10/profiles.git
-    profile_branch: hugh
-    profile_base_branch: main
-    git_username: "hughwang10"
-    git_token: "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"
-    # This is the name that will be shown on the PXE menu (NOTE: No Spaces)
-    name: Ubuntu_isw
-    custom_git_arguments: --depth=1    
