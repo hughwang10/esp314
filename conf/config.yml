@@ -1,5 +1,4 @@
 ---
-
 # Copyright (C) 2019 Intel Corporation
 # SPDX-License-Identifier: BSD-3-Clause
 
@@ -93,5 +92,14 @@ profiles:
     git_username: ""
     git_token: ""
     # This is the name that will be shown on the PXE menu (NOTE: No Spaces)
-    name: Ubuntu_22.04
-    custom_git_arguments: --depth=1
+    name: Ubuntu_slim
+    custom_git_arguments: --depth=1 
+
+  - git_remote_url: https://github.com/hughwang10/profile-ubuntu.git
+    profile_branch: slim
+    profile_base_branch: master
+    git_username: "hughwang10"
+    git_token: "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"
+    # This is the name that will be shown on the PXE menu (NOTE: No Spaces)
+    name: Ubuntu_Aspire
+    custom_git_arguments: --depth=1     
