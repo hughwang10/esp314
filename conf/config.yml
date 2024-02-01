@@ -96,10 +96,10 @@ profiles:
     custom_git_arguments: --depth=1 
 
   - git_remote_url: https://github.com/hughwang10/profile-ubuntu.git
-    profile_branch: slim
+    profile_branch: hugh
     profile_base_branch: master
     git_username: "hughwang10"
-    git_token: "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"
+    git_token: "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"
     # This is the name that will be shown on the PXE menu (NOTE: No Spaces)
     name: Ubuntu_Aspire
     custom_git_arguments: --depth=1     
