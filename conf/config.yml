@@ -67,6 +67,8 @@ interface: ens160
 ip_mapping:
   - mac: 00:50:56:b6:dc:22
     ip: 10.101.28.20
+  - mac: ec:2a:72:0f:f7:46
+    ip: 10.101.28.188    
 #   - mac: 01:12:23:24:25:26
 #     ip: 192.168.100.220
 
@@ -86,20 +88,29 @@ disable_fluent_logging: true
 # Please make sure to define ALL of the variables below, even if they
 # are empty. Otherwise, this application will not be configured properly.
 profiles:
-  - git_remote_url: https://github.com/intel/esp-profile-ubuntu.git
+  # - git_remote_url: https://github.com/intel/esp-profile-ubuntu.git
+  #   profile_branch: slim
+  #   profile_base_branch: master
+  #   git_username: ""
+  #   git_token: ""
+  #   # This is the name that will be shown on the PXE menu (NOTE: No Spaces)
+  #   name: Ubuntu_slim
+  #   custom_git_arguments: --depth=1 
+
+  - git_remote_url: https://github.com/hughwang10/profile-ubuntu.git
     profile_branch: slim
     profile_base_branch: master
-    git_username: ""
-    git_token: ""
+    git_username: "hughwang10"
+    git_token: "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"
     # This is the name that will be shown on the PXE menu (NOTE: No Spaces)
     name: Ubuntu_slim
-    custom_git_arguments: --depth=1 
+    custom_git_arguments: --depth=1   
 
   - git_remote_url: https://github.com/hughwang10/profile-ubuntu.git
     profile_branch: hugh
     profile_base_branch: master
     git_username: "hughwang10"
-    git_token: "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"
+    git_token: "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"
     # This is the name that will be shown on the PXE menu (NOTE: No Spaces)
-    name: Ubuntu_Aspire
+    name: Ubuntu_aspire
     custom_git_arguments: --depth=1     
