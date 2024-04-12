@@ -101,7 +101,7 @@ profiles:
     profile_branch: slim
     profile_base_branch: master
     git_username: "hughwang10"
-    git_token: "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"
+    git_token: ""
     # This is the name that will be shown on the PXE menu (NOTE: No Spaces)
     name: Ubuntu_slim
     custom_git_arguments: --depth=1   
@@ -110,7 +110,7 @@ profiles:
     profile_branch: hugh
     profile_base_branch: master
     git_username: "hughwang10"
-    git_token: "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"
+    git_token: ""
     # This is the name that will be shown on the PXE menu (NOTE: No Spaces)
     name: Ubuntu_aspire
     custom_git_arguments: --depth=1     
